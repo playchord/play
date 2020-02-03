@@ -80,23 +80,23 @@
     </div>
 
     <div class="keys2">
-          <button id="chordC" data-code="KeyX" class="key">
+          <button id="chord1" data-code="KeyX" class="key">
               <kbd>X</kbd>
               <span class="sound">I CHORD</span>
             </button>
-            <button id="chordF" data-code="KeyC" class="key">
+            <button id="chord2" data-code="KeyC" class="key">
               <kbd>C</kbd>
               <span class="sound">IV CHORD</span>
             </button>
-            <button id="chordG" data-code="KeyV" class="key">
+            <button id="chord3" data-code="KeyV" class="key">
               <kbd>V</kbd>
               <span class="sound">V CHORD</span>
             </button>
-            <button id="chordA" data-code="KeyB" class="key">
+            <button id="chord4" data-code="KeyB" class="key">
               <kbd>B</kbd>
               <span class="sound">VI CHORD</span>
             </button>
-            <button id="chordBb" data-code="KeyN" class="key">
+            <button id="chord5" data-code="KeyN" class="key">
               <kbd>N</kbd>
               <span class="sound">VIIb CHORD</span>
     </div>
@@ -255,31 +255,31 @@
       const audio = document.querySelector(`audio[data-code="${e.code}"]`);
       const key = document.querySelector(`button[data-code="${e.code}"]`);
       if (!audio) return;
-      if (key.id === 'chordC') {
+      if (key.id === 'chord1') {
         glow1();
         key.classList.add('playing');
         audio.currentTime = 0;
         audio.play();
       } 
-      if (key.id === 'chordF') {
+      if (key.id === 'chord2') {
         glow2();
         key.classList.add('playing');
         audio.currentTime = 0;
         audio.play();
       } 
-      if (key.id === 'chordG') {
+      if (key.id === 'chord3') {
         glow3();
         key.classList.add('playing');
         audio.currentTime = 0;
         audio.play();
       } 
-      if (key.id === 'chordA') {
+      if (key.id === 'chord4') {
         glow4();
         key.classList.add('playing');
         audio.currentTime = 0;
         audio.play();
       } 
-      if (key.id === 'chordBb') {
+      if (key.id === 'chord5') {
         glow5();
         key.classList.add('playing');
         audio.currentTime = 0;
