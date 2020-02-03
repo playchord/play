@@ -106,9 +106,9 @@ body {
 }
 
 .playing {
-    transform: scale(1.1);
-    border-color: #ffc600;
-    box-shadow: 0 0 1rem #ffc600;
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
 }
 
 .glow {
@@ -128,7 +128,7 @@ kbd {
     color: #ffc600;
   }
 
-  .menu {
+.menu {
     display: flex;
     flex: 1;
     height: 3vh;
@@ -137,7 +137,7 @@ kbd {
     background: rgb(0, 0, 0);
   }
 
-  .menuItem {
+.menuItem {
     border: .4rem solid rgba(0, 0, 0, 0);
     margin: 1rem;
     font-size: 1.5rem;
@@ -152,11 +152,27 @@ kbd {
     outline: none;
   }
 
-  button {
+.selector {
+    border: .4rem solid rgba(0, 0, 0, 0);
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 30px;
+    text-align: center;
     cursor: pointer;
     outline: none;
   }
 
-  a {
-    text-decoration: none;
+.menu select {
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  }
+
+button {
+  cursor: pointer;
+  outline: none;
+  }
+
+a {
+  text-decoration: none;
   }
