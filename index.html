@@ -77,9 +77,9 @@
             <kbd>K</kbd>
             <span class="sound">VIII</span>
           </button>
-        </div>
+    </div>
 
-        <div class="keys2">
+    <div class="keys2">
           <button id="chordC" data-code="KeyX" class="key">
               <kbd>X</kbd>
               <span class="sound">I CHORD</span>
@@ -99,7 +99,25 @@
             <button id="chordBb" data-code="KeyN" class="key">
               <kbd>N</kbd>
               <span class="sound">VIIb CHORD</span>
-        </div>
+    </div>
+
+    <div class="showChords">
+          <div id="show1" class="chordIndicatorOff">
+              <span>C</span>
+            </div>
+            <div id="show2" class="chordIndicatorOff">
+              <span>F</span>
+            </div>
+            <div id="show3" class="chordIndicatorOff">
+              <span>G</span>
+            </div>
+            <div id="show4" class="chordIndicatorOff">
+              <span>Am</span>
+            </div>
+            <div id="show5" class="chordIndicatorOff">
+              <span>Bb</span>
+            </div>
+    </div>
 
         <div class="showKeys">
             <div data-note="C1" class="key2 keyFirst white">
@@ -206,6 +224,7 @@
     const keys = document.querySelector('.keys')
     const keys2 = document.querySelector('.keys2')
     const bottomKeys = document.querySelector('.showKeys')
+    const chords = document.querySelector('.showChords')
 
     keys.addEventListener('click', onKeyClick);
     keys2.addEventListener('click', onKeyClick);
@@ -214,6 +233,7 @@
     keys.addEventListener('transitionend', removeTransition);
     keys2.addEventListener('transitionend', removeTransition);
     bottomKeys.addEventListener('transitionend', removeTransition);
+    chords.addEventListener('transitionend', removeTransition);
 
     document.addEventListener('keydown', playSound);
 
@@ -228,7 +248,7 @@
     function removeTransition(e) {
       if (e.propertyName !== 'transform') return;  
       const key = e.target.closest('button') || e.target
-      key.classList.remove('playing', 'glow');
+      key.classList.remove('playing', 'glow', 'chordIndicatorOn');
     }
 
     function playSound(e) {
@@ -236,31 +256,31 @@
       const key = document.querySelector(`button[data-code="${e.code}"]`);
       if (!audio) return;
       if (key.id === 'chordC') {
-        glowC();
+        glow1();
         key.classList.add('playing');
         audio.currentTime = 0;
         audio.play();
       } 
       if (key.id === 'chordF') {
-        glowF();
+        glow2();
         key.classList.add('playing');
         audio.currentTime = 0;
         audio.play();
       } 
       if (key.id === 'chordG') {
-        glowG();
+        glow3();
         key.classList.add('playing');
         audio.currentTime = 0;
         audio.play();
       } 
       if (key.id === 'chordA') {
-        glowA();
+        glow4();
         key.classList.add('playing');
         audio.currentTime = 0;
         audio.play();
       } 
       if (key.id === 'chordBb') {
-        glowBb();
+        glow5();
         key.classList.add('playing');
         audio.currentTime = 0;
         audio.play();
@@ -328,13 +348,14 @@
     const chordBb = document.querySelector('button[data-code="KeyN"');
     
 
-    chordC.addEventListener('click', glowC)
-    chordF.addEventListener('click', glowF)
-    chordG.addEventListener('click', glowG)
-    chordA.addEventListener('click', glowA)
-    chordBb.addEventListener('click', glowBb)
+    chordC.addEventListener('click', glow1)
+    chordF.addEventListener('click', glow2)
+    chordG.addEventListener('click', glow3)
+    chordA.addEventListener('click', glow4)
+    chordBb.addEventListener('click', glow5)
 
-    function glowC(e) {
+    function glow1(e) {
+    document.querySelector('#show1').classList.add('chordIndicatorOn');
     keyC1.classList.add('glow');
     keyC2.classList.add('glow');
     keyG2.classList.add('glow');
@@ -343,7 +364,8 @@
     keyG3.classList.add('glow');
 }
 
-    function glowF(e) {
+    function glow2(e) {
+    document.querySelector('#show2').classList.add('chordIndicatorOn');
     keyF1.classList.add('glow');
     keyF2.classList.add('glow');
     keyA2.classList.add('glow');
@@ -352,7 +374,8 @@
     keyA3.classList.add('glow');
 }
 
-    function glowG(e) {
+    function glow3(e) {
+    document.querySelector('#show3').classList.add('chordIndicatorOn');
     keyG1.classList.add('glow');
     keyG2.classList.add('glow');
     keyB2.classList.add('glow');
@@ -360,7 +383,8 @@
     keyG3.classList.add('glow');
 }
 
-    function glowA(e) {
+    function glow4(e) {
+    document.querySelector('#show4').classList.add('chordIndicatorOn');
     keyA1.classList.add('glow');
     keyE2.classList.add('glow');
     keyA2.classList.add('glow');
@@ -368,7 +392,8 @@
     keyE3.classList.add('glow');
 }
 
-    function glowBb(e) {
+    function glow5(e) {
+    document.querySelector('#show5').classList.add('chordIndicatorOn');
     keyBb1.classList.add('glow');
     keyF2.classList.add('glow');
     keyBb2.classList.add('glow');
