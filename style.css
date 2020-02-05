@@ -48,25 +48,26 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  margin-bottom: 2vh;
+  border-radius: 0.8rem 0.8rem 0rem 0rem;
+  margin: 0rem 2.8rem;
 }
 
 .chordIndicatorOff {
   border: 0em;
-  margin: 0 6rem 0 6rem;
+  margin: 0 8rem 0 8rem;
   font-size: 7rem;
   font-weight: bold;
   padding: 1rem .5rem;
   transition: all 0.8s ease;
   width: 10rem;
   text-align: center;
-  color:  #ffc80000;
-  background: rgba(0, 0, 0, 0);
+  color:  #8a8a8a54;
+  background: rgba(75, 75, 75, 0);
 }
 
 .chordIndicatorOn {
   transform: scale(1.05);
-  color: #ffffff63;
+  color: #b6b6b6d7;
   text-shadow:  0 0 0.5rem ##ffffff63;
 }
 
@@ -102,14 +103,6 @@ body {
   text-shadow: 0 0 .5rem black;
 }
 
-.keyFirst {
-  border-radius: 0.8rem 0rem 0.8rem 0.8rem;
-}
-
-.keyLast {
-  border-radius: 0rem 0.8rem 0.8rem 0.8rem;
-}
-
 .white {
   --width: 60px;
   height: 140px;
@@ -139,7 +132,7 @@ body {
   box-shadow: 0 0 1rem #ffc600;
 }
 
-.glow {
+.glowChord {
   transform: scale(0.95);
   background-color: #ffc600;
   box-shadow: 0 0 1rem #ffc600;
@@ -159,7 +152,7 @@ kbd {
 .menu {
     display: flex;
     flex: 1;
-    height: 3vh;
+    height: 30px;
     align-items: center;
     justify-content: center;
     background: rgb(0, 0, 0);
