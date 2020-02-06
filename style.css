@@ -61,8 +61,8 @@ body {
   transition: all 0.8s ease;
   width: 10rem;
   text-align: center;
-  color:  #8a8a8a54;
-  background: rgba(75, 75, 75, 0);
+  text-shadow: -1px -1px 0 rgb(117, 117, 117), 1px -1px 0 rgb(117, 117, 117), 
+  -1px 1px 0 rgb(117, 117, 117), 1px 1px 0 rgb(117, 117, 117);
 }
 
 .chordIndicatorOn {
