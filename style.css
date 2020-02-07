@@ -132,7 +132,7 @@ body {
   box-shadow: 0 0 1rem #ffc600;
 }
 
-.glowChord {
+.glow {
   transform: scale(0.95);
   background-color: #ffc600;
   box-shadow: 0 0 1rem #ffc600;
