@@ -193,9 +193,9 @@
     /*******************************/
 
     const keys = document.querySelector('.keys')
-    const keys2 = document.querySelector('.keys2')
-    const bottomKeys = document.querySelector('.showKeys')
-    const chords = document.querySelector('.showChords')
+    const chords = document.querySelector('.keys2')
+    const keyboard = document.querySelector('.showKeys')
+    const chordHints = document.querySelector('.showChords')
     const body = document.body
     const nav = document.querySelector('.menuItem');
 
@@ -207,15 +207,15 @@
     /*************************/
 
     keys.addEventListener('click', onKeyClick);
-    keys2.addEventListener('click', onKeyClick);
+    chords.addEventListener('click', onKeyClick);
 
     document.addEventListener('keydown', playSound);
     document.addEventListener('keyup', stopSound);
 
     keys.addEventListener('transitionend', removeTransition);
-    keys2.addEventListener('transitionend', removeTransition);
-    bottomKeys.addEventListener('transitionend', removeTransition);
     chords.addEventListener('transitionend', removeTransition);
+    keyboard.addEventListener('transitionend', removeTransition);
+    chordHints.addEventListener('transitionend', removeTransition);
 
     nav.addEventListener('click', function() {
       if (body.classList.contains('bg-1')) {
@@ -324,18 +324,7 @@
     // const keyBb3 = document.querySelector('div[data-note="Bb3"');
     // const keyB3 = document.querySelector('div[data-note="B3"');
 
-    const chordC = document.querySelector('button[data-code="KeyX"]');
-    const chordF = document.querySelector('button[data-code="KeyC"]');
-    const chordG = document.querySelector('button[data-code="KeyV"]');
-    const chordA = document.querySelector('button[data-code="KeyB"]');
-    const chordBb = document.querySelector('button[data-code="KeyN"]');
-
-
-    chordC.addEventListener('click', glow)
-    chordF.addEventListener('click', glow)
-    chordG.addEventListener('click', glow)
-    chordA.addEventListener('click', glow)
-    chordBb.addEventListener('click', glow)
+    chords.addEventListener('click', glow);
 
     function glow(e) {
         const clickedChord = e.target.closest('[data-chord]')
