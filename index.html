@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" class="html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
     <title>Piano</title>
 </head>
-<body>
+<body class="bg-1">
   <nav>
     <div class="menu">
       <select class="selector">
@@ -239,7 +241,8 @@
 
     function onKeyClick(e) {
       const key = e.target.closest('button');
-      key.classList.add("playing");
+      if (!key) return;
+      key.classList.add('playing');
       const audio = document.querySelector(`audio[data-code="${key.dataset.code}"]`);
       audio.currentTime = 0;
       audio.play();
@@ -255,52 +258,35 @@
       const audio = document.querySelector(`audio[data-code="${e.code}"]`);
       const key = document.querySelector(`button[data-code="${e.code}"]`);
       if (!audio) return;
+
       if (key.id === 'chord1') {
         glow1();
-        key.classList.add('playing');
-        audio.currentTime = 0;
-        audio.play();
       } 
       if (key.id === 'chord2') {
         glow2();
-        key.classList.add('playing');
-        audio.currentTime = 0;
-        audio.play();
       } 
       if (key.id === 'chord3') {
         glow3();
-        key.classList.add('playing');
-        audio.currentTime = 0;
-        audio.play();
       } 
       if (key.id === 'chord4') {
         glow4();
-        key.classList.add('playing');
-        audio.currentTime = 0;
-        audio.play();
       } 
       if (key.id === 'chord5') {
         glow5();
-        key.classList.add('playing');
-        audio.currentTime = 0;
-        audio.play();
-      } 
-      else {
-
+      }
       key.classList.add('playing');
       audio.currentTime = 0;
       audio.play();
     }
-  }
 
-    const html = document.querySelector('html');
+    const body = document.body
     const nav = document.querySelector('.menuItem');
     nav.addEventListener('transitionend', removeTransition);
     nav.addEventListener('click', function() {
-      if (html.classList.contains('html')) {
-      html.classList.replace('html', 'html2');
+      if (body.classList.contains('bg-1')) {
+        body.classList.replace('bg-1', 'bg-2');
       } else {
-        html.classList.replace('html2', 'html');
+        body.classList.replace('bg-2', 'bg-1');
       }
     });
 

@@ -6,18 +6,6 @@ html {
     font-size: 10px;
 }
 
-.html {
-    background: url(./images/piano.jpg) bottom center;
-    background-size: cover;
-    transition: all 2s ease;
-}
-
-.html2 {
-    background: url(./images/piano2.jpg) bottom center;
-    background-size: cover;
-    transition: all 2s ease;
-}
-
 body, html {
     margin: 0;
     padding: 0;
@@ -26,8 +14,20 @@ body, html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    background-color: #091526;
+    background-size: cover;
+    background-position: bottom center;
+    transition: background-image 2s ease;
+}
+
+.bg-1 {
+    background-image: url(./images/piano.jpg);
+}
+
+.bg-2 {
+    background-image: url(./images/piano2.jpg);
 }
 
 .keys {
