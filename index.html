@@ -224,11 +224,8 @@
     }
 
     function onKeyDown(e) {
-      console.log('onKeyDown() called');
       let alreadyPressed = pressedKeys.indexOf(e.code) > -1;
       if (!alreadyPressed) {
-          console.log('pressedKeys:', pressedKeys);
-          console.log('New key pressing received...');
           pressedKeys.push(e.code);
 
           const key = document.querySelector(`button[data-code="${e.code}"]`);
@@ -241,12 +238,8 @@
     }
 
     function onKeyUp(e) {
-      console.log('onKeyUp() called');
-      console.log('pressedKeys:', pressedKeys);
-      console.log('key released:', e.code);
       const keyIndex = pressedKeys.indexOf(e.code)
       pressedKeys.splice(keyIndex, 1);
-      console.log('pressedKeys:', pressedKeys);
 
       const key = document.querySelector(`button[data-code="${e.code}"]`);
       if (!key) return;
@@ -256,17 +249,13 @@
     function playSound(keyCode) {
       const audio = document.querySelector(`audio[data-code="${keyCode}"]`);
       if (!audio) return;
-      console.log('sound going to play!');
       audio.currentTime = 0;
       audio.play();
     }
 
     function makeChordGlow (keyElement) {
       const isChord = keyElement.getAttribute('data-chord');
-      if (isChord) {
-        console.log('Key is Chord!');
-        glow(keyElement);
-      }
+      if (isChord) glow(keyElement);
     }
 
     function glow(clickedChord) {
