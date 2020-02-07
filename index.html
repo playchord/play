@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" class="html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
     <title>Piano</title>
 </head>
-<body>
+<body class="bg-1">
   <nav>
     <div class="menu">
       <select class="selector">
@@ -45,7 +47,7 @@
   </nav>
 
     <div class="keys">
-        <button data-code="KeyA" class="key">
+          <button data-code="KeyA" class="key">
             <kbd>A</kbd>
             <span class="sound">I</span>
           </button>
@@ -80,29 +82,30 @@
     </div>
 
     <div class="keys2">
-          <button id="chord1" data-code="KeyX" class="key">
+          <button id="chord1" data-code="KeyX" data-chord="1" class="key">
               <kbd>X</kbd>
               <span class="sound">I CHORD</span>
             </button>
-            <button id="chord2" data-code="KeyC" class="key">
+            <button id="chord2" data-code="KeyC" data-chord="2" class="key">
               <kbd>C</kbd>
               <span class="sound">IV CHORD</span>
             </button>
-            <button id="chord3" data-code="KeyV" class="key">
+            <button id="chord3" data-code="KeyV" data-chord="3" class="key">
               <kbd>V</kbd>
               <span class="sound">V CHORD</span>
             </button>
-            <button id="chord4" data-code="KeyB" class="key">
+            <button id="chord4" data-code="KeyB" data-chord="4" class="key">
               <kbd>B</kbd>
               <span class="sound">VI CHORD</span>
             </button>
-            <button id="chord5" data-code="KeyN" class="key">
+            <button id="chord5" data-code="KeyN" data-chord="5" class="key">
               <kbd>N</kbd>
               <span class="sound">VIIb CHORD</span>
+            </button>
     </div>
 
     <div class="showChords">
-          <div id="show1" class="chordIndicatorOff">
+            <div id="show1" class="chordIndicatorOff">
               <span>C</span>
             </div>
             <div id="show2" class="chordIndicatorOff">
@@ -118,82 +121,45 @@
               <span>Bb</span>
             </div>
     </div>
-
         <div class="showKeys">
-            <div data-note="C1" class="key2 keyFirst white">
-            </div>
-            <div data-note="Db1" class="key2 black">
-            </div>
-            <div data-note="D1" class="key2 white">
-            </div>
-            <div data-note="Eb1" class="key2 black">
-            </div>
-            <div data-note="E1" class="key2 white">
-            </div>
-            <div data-note="F1" class="key2 white">
-            </div>
-            <div data-note="Gb1" class="key2 black">
-            </div>
-            <div data-note="G1" class="key2 white">
-            </div>
-            <div data-note="Ab1" class="key2 black">
-            </div>
-            <div data-note="A1" class="key2 white">
-            </div>
-            <div data-note="Bb1" class="key2 black">
-            </div>
-            <div data-note="B1" class="key2 white">
-            </div>
-            <div data-note="C2" class="key2 white">
-            </div>
-            <div data-note="Db2" class="key2 black">
-            </div>
-            <div data-note="D2" class="key2 white">
-            </div>
-            <div data-note="Eb2" class="key2 black">
-            </div>
-            <div data-note="E2" class="key2 white">
-            </div>
-            <div data-note="F2" class="key2 white">
-            </div>
-            <div data-note="Gb2" class="key2 black">
-            </div>
-            <div data-note="G2" class="key2 white">
-            </div>
-            <div data-note="Ab2" class="key2 black">
-            </div>
-            <div data-note="A2" class="key2 white">
-            </div>
-            <div data-note="Bb2" class="key2 black">
-            </div>
-            <div data-note="B2" class="key2 white">
-            </div>
-            <div data-note="C3" class="key2 white">
-            </div>
-            <div data-note="Db3" class="key2 black">
-            </div>
-            <div data-note="D3" class="key2 white">
-            </div>
-            <div data-note="Eb3" class="key2 black">
-            </div>
-            <div data-note="E3" class="key2 white">
-            </div>
-            <div data-note="F3" class="key2 white">
-            </div>
-            <div data-note="Gb3" class="key2 black">
-            </div>
-            <div data-note="G3" class="key2 white">
-            </div>
-            <div data-note="Ab3" class="key2 black">
-            </div>
-            <div data-note="A3" class="key2 white">
-            </div>
-            <div data-note="Bb3" class="key2 black">
-            </div>
-            <div data-note="B3" class="key2 keyLast white">
-            </div>
+            <div data-note="C1" data-chords="chord1" class="key2 keyFirst white"></div>
+            <div data-note="Db1" data-chords="" class="key2 black"></div>
+            <div data-note="D1"  data-chords="" class="key2 white"></div>
+            <div data-note="Eb1"  data-chords="" class="key2 black"></div>
+            <div data-note="E1" data-chords="" class="key2 white"></div>
+            <div data-note="F1" data-chords="chord2" class="key2 white"></div>
+            <div data-note="Gb1" data-chords="" class="key2 black"></div>
+            <div data-note="G1" data-chords="chord3" class="key2 white"></div>
+            <div data-note="Ab1" data-chords="" class="key2 black"></div>
+            <div data-note="A1" data-chords="chord4" class="key2 white"></div>
+            <div data-note="Bb1" data-chords="chord5" class="key2 black"></div>
+            <div data-note="B1" data-chords="" class="key2 white"></div>
+            <div data-note="C2" data-chords="chord1" class="key2 white"></div>
+            <div data-note="Db2" data-chords="" class="key2 black"></div>
+            <div data-note="D2" data-chords="" class="key2 white"></div>
+            <div data-note="Eb2" data-chords="" class="key2 black"></div>
+            <div data-note="E2" data-chords="chord4" class="key2 white"></div>
+            <div data-note="F2" data-chords="chord2 chord5" class="key2 white"></div>
+            <div data-note="Gb2" data-chords="" class="key2 black"></div>
+            <div data-note="G2" data-chords="chord1 chord3" class="key2 white"></div>
+            <div data-note="Ab2" data-chords="" class="key2 black"></div>
+            <div data-note="A2" data-chords="chord2 chord4" class="key2 white"></div>
+            <div data-note="Bb2" data-chords="chord5" class="key2 black"></div>
+            <div data-note="B2" data-chords="chord3" class="key2 white"></div>
+            <div data-note="C3" data-chords="chord1 chord2 chord4" class="key2 white"></div>
+            <div data-note="Db3" data-chords="" class="key2 black"></div>
+            <div data-note="D3" data-chords="chord3 chord5" class="key2 white"></div>
+            <div data-note="Eb3" data-chords="" class="key2 black"></div>
+            <div data-note="E3" data-chords="chord1 chord4" class="key2 white"></div>
+            <div data-note="F3" data-chords="chord2 chord5" class="key2 white"></div>
+            <div data-note="Gb3" data-chords="" class="key2 black"></div>
+            <div data-note="G3" data-chords="chord1 chord3" class="key2 white"></div>
+            <div data-note="Ab3" data-chords="" class="key2 black"></div>
+            <div data-note="A3" data-chords="chord2" class="key2 white"></div>
+            <div data-note="Bb3" data-chords="" class="key2 black"></div>
+            <div data-note="B3" data-chords="" class="key2 keyLast white"></div>
         </div>
-            
+
     <audio data-code="KeyA" src="sounds2/C.wav"></audio>
     <audio data-code="KeyS" src="sounds2/D.wav"></audio>
     <audio data-code="KeyD" src="sounds2/E.wav"></audio>
@@ -210,197 +176,114 @@
     <audio data-code="KeyN" src="sounds2/chordBb.wav"></audio>
 
   <script>
-    // const keys = Array.from(document.querySelectorAll('.key'));
-    // keys.forEach((key) => {
-    //   key.addEventListener('transitionend', removeTransition);
-    //   key.addEventListener("click", function(e) {
-    //     key.classList.add("playing");
-    //     const audio = document.querySelector(`audio[data-code="${key.dataset.code}"]`);
-    //     audio.currentTime = 0;
-    //     audio.play();
-    //   })
-    // });
+
+    /*******************************/
+    /* Declare costants & variables*/
+    /*******************************/
 
     const keys = document.querySelector('.keys')
-    const keys2 = document.querySelector('.keys2')
-    const bottomKeys = document.querySelector('.showKeys')
-    const chords = document.querySelector('.showChords')
+    const chords = document.querySelector('.keys2')
+    const keyboard = document.querySelector('.showKeys')
+    const chordHints = document.querySelector('.showChords')
+    const body = document.body
+    const nav = document.querySelector('.menuItem');
+
+    let pressedKeys = [];
+
+
+    /*************************/
+    /* Adding event handlers */
+    /*************************/
 
     keys.addEventListener('click', onKeyClick);
-    keys2.addEventListener('click', onKeyClick);
+    chords.addEventListener('click', onKeyClick);
 
-    // COOL SHIT BROH!
-    keys.addEventListener('transitionend', removeTransition);
-    keys2.addEventListener('transitionend', removeTransition);
-    bottomKeys.addEventListener('transitionend', removeTransition);
-    chords.addEventListener('transitionend', removeTransition);
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('keyup', onKeyUp);
 
-    document.addEventListener('keydown', playSound);
+    keys.addEventListener('transitionend', onTransitionEnd);
+    chords.addEventListener('transitionend', onTransitionEnd);
+    keyboard.addEventListener('transitionend', onTransitionEnd);
+    chordHints.addEventListener('transitionend', onTransitionEnd);
+    nav.addEventListener('transitionend', onTransitionEnd);
+
+    nav.addEventListener('click', changeBackground);
+
+
+    /********************/
+    /* Declare Handlers */
+    /********************/
 
     function onKeyClick(e) {
       const key = e.target.closest('button');
-      key.classList.add("playing");
-      const audio = document.querySelector(`audio[data-code="${key.dataset.code}"]`);
+      if (!key) return;
+      key.classList.add('playing');
+
+      playSound(key.dataset.code);
+      makeChordGlow(key);
+    }
+
+    function onKeyDown(e) {
+      let alreadyPressed = pressedKeys.indexOf(e.code) > -1;
+      if (!alreadyPressed) {
+          pressedKeys.push(e.code);
+
+          const key = document.querySelector(`button[data-code="${e.code}"]`);
+          if (!key) return;
+          key.classList.add('playing');
+
+          playSound(e.code);
+          makeChordGlow(key);
+      } else console.log('already pressed!');
+    }
+
+    function onKeyUp(e) {
+      const keyIndex = pressedKeys.indexOf(e.code)
+      pressedKeys.splice(keyIndex, 1);
+
+      const key = document.querySelector(`button[data-code="${e.code}"]`);
+      if (!key) return;
+      removeHighlighting(key);
+    }
+
+    function playSound(keyCode) {
+      const audio = document.querySelector(`audio[data-code="${keyCode}"]`);
+      if (!audio) return;
       audio.currentTime = 0;
       audio.play();
     }
 
-    function removeTransition(e) {
-      if (e.propertyName !== 'transform') return;  
-      const key = e.target.closest('button') || e.target
+    function makeChordGlow (keyElement) {
+      const isChord = keyElement.getAttribute('data-chord');
+      if (isChord) glow(keyElement);
+    }
+
+    function glow(clickedChord) {
+        const chordNum = clickedChord.getAttribute('data-chord');
+        document.querySelector(`#show${chordNum}`).classList.add('chordIndicatorOn');
+        const chordKeys = document.querySelectorAll(`[data-chords*=chord${chordNum}]`)
+        chordKeys.forEach(key => key.classList.add('glow'));
+    }
+
+    function onTransitionEnd(e) {
+      if (e.propertyName !== 'transform') return;
+      const key = e.target.closest('button') || e.target;
+      const keyCode = key.getAttribute('data-code');
+      const keyIsPressed = pressedKeys.indexOf(keyCode) > -1
+      if (!keyIsPressed) removeHighlighting(key);
+    }
+
+    function removeHighlighting(key) {
       key.classList.remove('playing', 'glow', 'chordIndicatorOn');
     }
 
-    function playSound(e) {
-      const audio = document.querySelector(`audio[data-code="${e.code}"]`);
-      const key = document.querySelector(`button[data-code="${e.code}"]`);
-      if (!audio) return;
-      if (key.id === 'chord1') {
-        glow1();
-        key.classList.add('playing');
-        audio.currentTime = 0;
-        audio.play();
-      } 
-      if (key.id === 'chord2') {
-        glow2();
-        key.classList.add('playing');
-        audio.currentTime = 0;
-        audio.play();
-      } 
-      if (key.id === 'chord3') {
-        glow3();
-        key.classList.add('playing');
-        audio.currentTime = 0;
-        audio.play();
-      } 
-      if (key.id === 'chord4') {
-        glow4();
-        key.classList.add('playing');
-        audio.currentTime = 0;
-        audio.play();
-      } 
-      if (key.id === 'chord5') {
-        glow5();
-        key.classList.add('playing');
-        audio.currentTime = 0;
-        audio.play();
-      } 
-      else {
-
-      key.classList.add('playing');
-      audio.currentTime = 0;
-      audio.play();
-    }
-  }
-
-    const html = document.querySelector('html');
-    const nav = document.querySelector('.menuItem');
-    nav.addEventListener('transitionend', removeTransition);
-    nav.addEventListener('click', function() {
-      if (html.classList.contains('html')) {
-      html.classList.replace('html', 'html2');
+    function changeBackground() {
+      if (body.classList.contains('bg-1')) {
+        body.classList.replace('bg-1', 'bg-2');
       } else {
-        html.classList.replace('html2', 'html');
+        body.classList.replace('bg-2', 'bg-1');
       }
-    });
-
-    const keyC1 = document.querySelector('div[data-note="C1"');
-    const keyDb1 = document.querySelector('div[data-note="Db1"');
-    const keyD1 = document.querySelector('div[data-note="D1"');
-    const keyEb1 = document.querySelector('div[data-note="Eb1"');
-    const keyE1 = document.querySelector('div[data-note="E1"');
-    const keyF1 = document.querySelector('div[data-note="F1"');
-    const keyGb1 = document.querySelector('div[data-note="Gb1"');
-    const keyG1 = document.querySelector('div[data-note="G1"');
-    const keyAb1 = document.querySelector('div[data-note="Ab1"');
-    const keyA1 = document.querySelector('div[data-note="A1"');
-    const keyBb1 = document.querySelector('div[data-note="Bb1"');
-    const keyB1 = document.querySelector('div[data-note="B1"');
-    const keyC2 = document.querySelector('div[data-note="C2"');
-    const keyDb2 = document.querySelector('div[data-note="Db2"');
-    const keyD2 = document.querySelector('div[data-note="D2"');
-    const keyEb2 = document.querySelector('div[data-note="Eb2"');
-    const keyE2 = document.querySelector('div[data-note="E2"');
-    const keyF2 = document.querySelector('div[data-note="F2"');
-    const keyGb2 = document.querySelector('div[data-note="Gb2"');
-    const keyG2 = document.querySelector('div[data-note="G2"');
-    const keyAb2 = document.querySelector('div[data-note="Ab2"');
-    const keyA2 = document.querySelector('div[data-note="A2"');
-    const keyBb2 = document.querySelector('div[data-note="Bb2"');
-    const keyB2 = document.querySelector('div[data-note="B2"');
-    const keyC3 = document.querySelector('div[data-note="C3"');
-    const keyDb3 = document.querySelector('div[data-note="Db3"');
-    const keyD3 = document.querySelector('div[data-note="D3"');
-    const keyEb3 = document.querySelector('div[data-note="Eb3"');
-    const keyE3 = document.querySelector('div[data-note="E3"');
-    const keyF3 = document.querySelector('div[data-note="F3"');
-    const keyGb3 = document.querySelector('div[data-note="Gb3"');
-    const keyG3 = document.querySelector('div[data-note="G3"');
-    const keyAb3 = document.querySelector('div[data-note="Ab3"');
-    const keyA3 = document.querySelector('div[data-note="A3"');
-    const keyBb3 = document.querySelector('div[data-note="Bb3"');
-    const keyB3 = document.querySelector('div[data-note="B3"');
-
-    const chordC = document.querySelector('button[data-code="KeyX"');
-    const chordF = document.querySelector('button[data-code="KeyC"');
-    const chordG = document.querySelector('button[data-code="KeyV"');
-    const chordA = document.querySelector('button[data-code="KeyB"');
-    const chordBb = document.querySelector('button[data-code="KeyN"');
-    
-
-    chordC.addEventListener('click', glow1)
-    chordF.addEventListener('click', glow2)
-    chordG.addEventListener('click', glow3)
-    chordA.addEventListener('click', glow4)
-    chordBb.addEventListener('click', glow5)
-
-    function glow1(e) {
-    document.querySelector('#show1').classList.add('chordIndicatorOn');
-    keyC1.classList.add('glow');
-    keyC2.classList.add('glow');
-    keyG2.classList.add('glow');
-    keyC3.classList.add('glow');
-    keyE3.classList.add('glow');
-    keyG3.classList.add('glow');
-}
-
-    function glow2(e) {
-    document.querySelector('#show2').classList.add('chordIndicatorOn');
-    keyF1.classList.add('glow');
-    keyF2.classList.add('glow');
-    keyA2.classList.add('glow');
-    keyC3.classList.add('glow');
-    keyF3.classList.add('glow');
-    keyA3.classList.add('glow');
-}
-
-    function glow3(e) {
-    document.querySelector('#show3').classList.add('chordIndicatorOn');
-    keyG1.classList.add('glow');
-    keyG2.classList.add('glow');
-    keyB2.classList.add('glow');
-    keyD3.classList.add('glow');
-    keyG3.classList.add('glow');
-}
-
-    function glow4(e) {
-    document.querySelector('#show4').classList.add('chordIndicatorOn');
-    keyA1.classList.add('glow');
-    keyE2.classList.add('glow');
-    keyA2.classList.add('glow');
-    keyC3.classList.add('glow');
-    keyE3.classList.add('glow');
-}
-
-    function glow5(e) {
-    document.querySelector('#show5').classList.add('chordIndicatorOn');
-    keyBb1.classList.add('glow');
-    keyF2.classList.add('glow');
-    keyBb2.classList.add('glow');
-    keyD3.classList.add('glow');
-    keyF3.classList.add('glow');
-}
-
+    }
   </script>
 
 </body>
