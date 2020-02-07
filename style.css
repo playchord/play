@@ -17,9 +17,10 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #091526;
+    background-image: none;
     background-size: cover;
     background-position: bottom center;
-    transition: background-image 2s ease;
+    transition: background-image 1s ease-in;
 }
 
 .bg-1 {

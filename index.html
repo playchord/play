@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Piano</title>
 </head>
-<body class="bg-1">
+<body class="">
   <nav>
     <div class="menu">
       <select class="selector">
@@ -205,7 +205,7 @@
     chords.addEventListener('transitionend', onTransitionEnd);
     keyboard.addEventListener('transitionend', onTransitionEnd);
     chordHints.addEventListener('transitionend', onTransitionEnd);
-    nav.addEventListener('transitionend', onTransitionEnd);
+    // nav.addEventListener('transitionend', onTransitionEnd);
 
     nav.addEventListener('click', changeBackground);
 
@@ -284,6 +284,22 @@
         body.classList.replace('bg-2', 'bg-1');
       }
     }
+
+
+    /********************/
+    /* Image preloading */
+    /********************/
+
+    const bg1Img = new Image();
+    bg1Img.src = './images/piano.jpg';
+
+    const bg2Img = new Image();
+    bg2Img.src = './images/piano2.jpg';
+
+    bg1Img.addEventListener('load', function(e) {
+      document.body.classList.add('bg-1');
+    });
+
   </script>
 
 </body>
