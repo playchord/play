@@ -82,23 +82,23 @@
     </div>
 
     <div class="keys2">
-          <button id="chord1" data-code="KeyX" class="key">
+          <button id="chord1" data-code="KeyX" data-chord="1" class="key">
               <kbd>X</kbd>
               <span class="sound">I CHORD</span>
             </button>
-            <button id="chord2" data-code="KeyC" class="key">
+            <button id="chord2" data-code="KeyC" data-chord="2" class="key">
               <kbd>C</kbd>
               <span class="sound">IV CHORD</span>
             </button>
-            <button id="chord3" data-code="KeyV" class="key">
+            <button id="chord3" data-code="KeyV" data-chord="3" class="key">
               <kbd>V</kbd>
               <span class="sound">V CHORD</span>
             </button>
-            <button id="chord4" data-code="KeyB" class="key">
+            <button id="chord4" data-code="KeyB" data-chord="4" class="key">
               <kbd>B</kbd>
               <span class="sound">VI CHORD</span>
             </button>
-            <button id="chord5" data-code="KeyN" class="key">
+            <button id="chord5" data-code="KeyN" data-chord="5" class="key">
               <kbd>N</kbd>
               <span class="sound">VIIb CHORD</span>
             </button>
@@ -122,78 +122,42 @@
             </div>
     </div>
         <div class="showKeys">
-            <div data-note="C1" data-chords="chord1" class="key2 keyFirst white">
-            </div>
-            <div data-note="Db1" data-chords="" class="key2 black">
-            </div>
-            <div data-note="D1"  data-chords="" class="key2 white">
-            </div>
-            <div data-note="Eb1"  data-chords="" class="key2 black">
-            </div>
-            <div data-note="E1" data-chords="" class="key2 white">
-            </div>
-            <div data-note="F1" data-chords="chord2" class="key2 white">
-            </div>
-            <div data-note="Gb1" data-chords="" class="key2 black">
-            </div>
-            <div data-note="G1" data-chords="chord3" class="key2 white">
-            </div>
-            <div data-note="Ab1" data-chords="" class="key2 black">
-            </div>
-            <div data-note="A1" data-chords="chord4" class="key2 white">
-            </div>
-            <div data-note="Bb1" data-chords="chord5" class="key2 black">
-            </div>
-            <div data-note="B1" data-chords="" class="key2 white">
-            </div>
-            <div data-note="C2" data-chords="chord1" class="key2 white">
-            </div>
-            <div data-note="Db2" data-chords="" class="key2 black">
-            </div>
-            <div data-note="D2" data-chords="" class="key2 white">
-            </div>
-            <div data-note="Eb2" data-chords="" class="key2 black">
-            </div>
-            <div data-note="E2" data-chords="chord4" class="key2 white">
-            </div>
-            <div data-note="F2" data-chords="chord2 chord5" class="key2 white">
-            </div>
-            <div data-note="Gb2" data-chords="" class="key2 black">
-            </div>
-            <div data-note="G2" data-chords="chord1 chord3" class="key2 white">
-            </div>
-            <div data-note="Ab2" data-chords="" class="key2 black">
-            </div>
-            <div data-note="A2" data-chords="chord2 chord4" class="key2 white">
-            </div>
-            <div data-note="Bb2" data-chords="chord5" class="key2 black">
-            </div>
-            <div data-note="B2" data-chords="chord3" class="key2 white">
-            </div>
-            <div data-note="C3" data-chords="chord1 chord2 chord4" class="key2 white">
-            </div>
-            <div data-note="Db3" data-chords="" class="key2 black">
-            </div>
-            <div data-note="D3" data-chords="chord3 chord5" class="key2 white">
-            </div>
-            <div data-note="Eb3" data-chords="" class="key2 black">
-            </div>
-            <div data-note="E3" data-chords="chord1 chord4" class="key2 white">
-            </div>
-            <div data-note="F3" data-chords="chord2 chord5" class="key2 white">
-            </div>
-            <div data-note="Gb3" data-chords="" class="key2 black">
-            </div>
-            <div data-note="G3" data-chords="chord1 chord3" class="key2 white">
-            </div>
-            <div data-note="Ab3" data-chords="" class="key2 black">
-            </div>
-            <div data-note="A3" data-chords="chord2" class="key2 white">
-            </div>
-            <div data-note="Bb3" data-chords="" class="key2 black">
-            </div>
-            <div data-note="B3" data-chords="" class="key2 keyLast white">
-            </div>
+            <div data-note="C1" data-chords="chord1" class="key2 keyFirst white"></div>
+            <div data-note="Db1" data-chords="" class="key2 black"></div>
+            <div data-note="D1"  data-chords="" class="key2 white"></div>
+            <div data-note="Eb1"  data-chords="" class="key2 black"></div>
+            <div data-note="E1" data-chords="" class="key2 white"></div>
+            <div data-note="F1" data-chords="chord2" class="key2 white"></div>
+            <div data-note="Gb1" data-chords="" class="key2 black"></div>
+            <div data-note="G1" data-chords="chord3" class="key2 white"></div>
+            <div data-note="Ab1" data-chords="" class="key2 black"></div>
+            <div data-note="A1" data-chords="chord4" class="key2 white"></div>
+            <div data-note="Bb1" data-chords="chord5" class="key2 black"></div>
+            <div data-note="B1" data-chords="" class="key2 white"></div>
+            <div data-note="C2" data-chords="chord1" class="key2 white"></div>
+            <div data-note="Db2" data-chords="" class="key2 black"></div>
+            <div data-note="D2" data-chords="" class="key2 white"></div>
+            <div data-note="Eb2" data-chords="" class="key2 black"></div>
+            <div data-note="E2" data-chords="chord4" class="key2 white"></div>
+            <div data-note="F2" data-chords="chord2 chord5" class="key2 white"></div>
+            <div data-note="Gb2" data-chords="" class="key2 black"></div>
+            <div data-note="G2" data-chords="chord1 chord3" class="key2 white"></div>
+            <div data-note="Ab2" data-chords="" class="key2 black"></div>
+            <div data-note="A2" data-chords="chord2 chord4" class="key2 white"></div>
+            <div data-note="Bb2" data-chords="chord5" class="key2 black"></div>
+            <div data-note="B2" data-chords="chord3" class="key2 white"></div>
+            <div data-note="C3" data-chords="chord1 chord2 chord4" class="key2 white"></div>
+            <div data-note="Db3" data-chords="" class="key2 black"></div>
+            <div data-note="D3" data-chords="chord3 chord5" class="key2 white"></div>
+            <div data-note="Eb3" data-chords="" class="key2 black"></div>
+            <div data-note="E3" data-chords="chord1 chord4" class="key2 white"></div>
+            <div data-note="F3" data-chords="chord2 chord5" class="key2 white"></div>
+            <div data-note="Gb3" data-chords="" class="key2 black"></div>
+            <div data-note="G3" data-chords="chord1 chord3" class="key2 white"></div>
+            <div data-note="Ab3" data-chords="" class="key2 black"></div>
+            <div data-note="A3" data-chords="chord2" class="key2 white"></div>
+            <div data-note="Bb3" data-chords="" class="key2 black"></div>
+            <div data-note="B3" data-chords="" class="key2 keyLast white"></div>
         </div>
 
     <audio data-code="KeyA" src="sounds2/C.wav"></audio>
@@ -366,12 +330,22 @@
     const chordBb = document.querySelector('button[data-code="KeyN"]');
 
 
-    chordC.addEventListener('click', glow1)
-    chordF.addEventListener('click', glow2)
-    chordG.addEventListener('click', glow3)
-    chordA.addEventListener('click', glow4)
-    chordBb.addEventListener('click', glow5)
+    chordC.addEventListener('click', glow)
+    chordF.addEventListener('click', glow)
+    chordG.addEventListener('click', glow)
+    chordA.addEventListener('click', glow)
+    chordBb.addEventListener('click', glow)
 
+    function glow(e) {
+        const clickedChord = e.target.closest('[data-chord]')
+        console.log('clickedChord:', clickedChord);
+        const chordNum = clickedChord.getAttribute('data-chord');
+        console.log('chordNum:', chordNum);
+
+        document.querySelector(`#show${chordNum}`).classList.add('chordIndicatorOn');
+        const chordKeys = document.querySelectorAll(`[data-chords*=chord${chordNum}]`)
+        chordKeys.forEach(key => key.classList.add('glow'));
+    }
 
     function glow1(e) {
         document.querySelector('#show1').classList.add('chordIndicatorOn');
