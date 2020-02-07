@@ -198,6 +198,7 @@
     keys.addEventListener('click', onKeyClick);
     chords.addEventListener('click', onKeyClick);
     chords.addEventListener('click', glow);
+    nav.addEventListener('click', changeBackground);
 
     document.addEventListener('keydown', playSound);
     document.addEventListener('keyup', stopSound);
@@ -206,14 +207,6 @@
     chords.addEventListener('transitionend', removeTransition);
     keyboard.addEventListener('transitionend', removeTransition);
     chordHints.addEventListener('transitionend', removeTransition);
-
-    nav.addEventListener('click', function() {
-      if (body.classList.contains('bg-1')) {
-        body.classList.replace('bg-1', 'bg-2');
-      } else {
-        body.classList.replace('bg-2', 'bg-1');
-      }
-    });
     nav.addEventListener('transitionend', removeTransition);
 
 
@@ -283,6 +276,13 @@
       key.classList.remove('playing', 'glow', 'chordIndicatorOn');
     }
 
+    function changeBackground() {
+      if (body.classList.contains('bg-1')) {
+        body.classList.replace('bg-1', 'bg-2');
+      } else {
+        body.classList.replace('bg-2', 'bg-1');
+      }
+    }
   </script>
 
 </body>
