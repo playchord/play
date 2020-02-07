@@ -238,6 +238,8 @@
     chords.addEventListener('transitionend', removeTransition);
 
     document.addEventListener('keydown', playSound);
+    document.addEventListener('keyup', stopSound);
+    let pressedKeys = [];
 
     function onKeyClick(e) {
       const key = e.target.closest('button');
@@ -249,34 +251,53 @@
     }
 
     function removeTransition(e) {
-      if (e.propertyName !== 'transform') return;  
+      if (e.propertyName !== 'transform') return;
       const key = e.target.closest('button') || e.target
       key.classList.remove('playing', 'glow', 'chordIndicatorOn');
     }
 
     function playSound(e) {
-      const audio = document.querySelector(`audio[data-code="${e.code}"]`);
-      const key = document.querySelector(`button[data-code="${e.code}"]`);
-      if (!audio) return;
+        console.log('playSound() called');
+        let alreadyPressed = pressedKeys.indexOf(e.code) > -1;
+        if (!alreadyPressed) {
+            console.log('pressedKeys:', pressedKeys);
+            console.log('New key pressing received...');
+            pressedKeys.push(e.code);
 
-      if (key.id === 'chord1') {
-        glow1();
-      } 
-      if (key.id === 'chord2') {
-        glow2();
-      } 
-      if (key.id === 'chord3') {
-        glow3();
-      } 
-      if (key.id === 'chord4') {
-        glow4();
-      } 
-      if (key.id === 'chord5') {
-        glow5();
-      }
-      key.classList.add('playing');
-      audio.currentTime = 0;
-      audio.play();
+            const audio = document.querySelector(`audio[data-code="${e.code}"]`);
+            const key = document.querySelector(`button[data-code="${e.code}"]`);
+            if (!audio) return;
+            if (!key) console.warn('Audio without key UI found !!!')
+            console.log('sound going to play!');
+
+            if (key.id === 'chord1') {
+              glow1();
+            } 
+            if (key.id === 'chord2') {
+              glow2();
+            } 
+            if (key.id === 'chord3') {
+              glow3();
+            } 
+            if (key.id === 'chord4') {
+              glow4();
+            } 
+            if (key.id === 'chord5') {
+              glow5();
+            }
+            key.classList.add('playing');
+            audio.currentTime = 0;
+            audio.play();
+        } else console.log('already pressed!');
+    }
+
+    function stopSound(e) {
+        console.log('stopSound() called');
+        console.log('pressedKeys:', pressedKeys);
+        console.log('key released:', e.code);
+        const keyIndex = pressedKeys.indexOf(e.code)
+        pressedKeys.splice(keyIndex, 1);
+        console.log('pressedKeys:', pressedKeys);
     }
 
     const body = document.body
@@ -341,51 +362,51 @@
     chordBb.addEventListener('click', glow5)
 
     function glow1(e) {
-    document.querySelector('#show1').classList.add('chordIndicatorOn');
-    keyC1.classList.add('glow');
-    keyC2.classList.add('glow');
-    keyG2.classList.add('glow');
-    keyC3.classList.add('glow');
-    keyE3.classList.add('glow');
-    keyG3.classList.add('glow');
-}
+        document.querySelector('#show1').classList.add('chordIndicatorOn');
+        keyC1.classList.add('glow');
+        keyC2.classList.add('glow');
+        keyG2.classList.add('glow');
+        keyC3.classList.add('glow');
+        keyE3.classList.add('glow');
+        keyG3.classList.add('glow');
+    }
 
     function glow2(e) {
-    document.querySelector('#show2').classList.add('chordIndicatorOn');
-    keyF1.classList.add('glow');
-    keyF2.classList.add('glow');
-    keyA2.classList.add('glow');
-    keyC3.classList.add('glow');
-    keyF3.classList.add('glow');
-    keyA3.classList.add('glow');
-}
+        document.querySelector('#show2').classList.add('chordIndicatorOn');
+        keyF1.classList.add('glow');
+        keyF2.classList.add('glow');
+        keyA2.classList.add('glow');
+        keyC3.classList.add('glow');
+        keyF3.classList.add('glow');
+        keyA3.classList.add('glow');
+    }
 
     function glow3(e) {
-    document.querySelector('#show3').classList.add('chordIndicatorOn');
-    keyG1.classList.add('glow');
-    keyG2.classList.add('glow');
-    keyB2.classList.add('glow');
-    keyD3.classList.add('glow');
-    keyG3.classList.add('glow');
-}
+        document.querySelector('#show3').classList.add('chordIndicatorOn');
+        keyG1.classList.add('glow');
+        keyG2.classList.add('glow');
+        keyB2.classList.add('glow');
+        keyD3.classList.add('glow');
+        keyG3.classList.add('glow');
+    }
 
     function glow4(e) {
-    document.querySelector('#show4').classList.add('chordIndicatorOn');
-    keyA1.classList.add('glow');
-    keyE2.classList.add('glow');
-    keyA2.classList.add('glow');
-    keyC3.classList.add('glow');
-    keyE3.classList.add('glow');
-}
+        document.querySelector('#show4').classList.add('chordIndicatorOn');
+        keyA1.classList.add('glow');
+        keyE2.classList.add('glow');
+        keyA2.classList.add('glow');
+        keyC3.classList.add('glow');
+        keyE3.classList.add('glow');
+    }
 
     function glow5(e) {
-    document.querySelector('#show5').classList.add('chordIndicatorOn');
-    keyBb1.classList.add('glow');
-    keyF2.classList.add('glow');
-    keyBb2.classList.add('glow');
-    keyD3.classList.add('glow');
-    keyF3.classList.add('glow');
-}
+        document.querySelector('#show5').classList.add('chordIndicatorOn');
+        keyBb1.classList.add('glow');
+        keyF2.classList.add('glow');
+        keyBb2.classList.add('glow');
+        keyD3.classList.add('glow');
+        keyF3.classList.add('glow');
+    }
 
   </script>
 
