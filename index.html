@@ -241,7 +241,7 @@
     }
 
     function onKeyUp(e) {
-      console.log('stopSound() called');
+      console.log('onKeyUp() called');
       console.log('pressedKeys:', pressedKeys);
       console.log('key released:', e.code);
       const keyIndex = pressedKeys.indexOf(e.code)
@@ -250,34 +250,27 @@
 
       const key = document.querySelector(`button[data-code="${e.code}"]`);
       if (!key) return;
-
       removeHighlighting(key);
     }
 
     function playSound(keyCode) {
       const audio = document.querySelector(`audio[data-code="${keyCode}"]`);
-      if (!audio) return false;
+      if (!audio) return;
       console.log('sound going to play!');
       audio.currentTime = 0;
       audio.play();
-      return true;
     }
 
     function makeChordGlow (keyElement) {
       const isChord = keyElement.getAttribute('data-chord');
       if (isChord) {
         console.log('Key is Chord!');
-        const event = { target: keyElement };
-        glow(event);
+        glow(keyElement);
       }
     }
 
-    function glow(e) {
-        const clickedChord = e.target.closest('[data-chord]')
-        console.log('clickedChord:', clickedChord);
+    function glow(clickedChord) {
         const chordNum = clickedChord.getAttribute('data-chord');
-        console.log('chordNum:', chordNum);
-
         document.querySelector(`#show${chordNum}`).classList.add('chordIndicatorOn');
         const chordKeys = document.querySelectorAll(`[data-chords*=chord${chordNum}]`)
         chordKeys.forEach(key => key.classList.add('glow'));
