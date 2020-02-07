@@ -176,17 +176,6 @@
     <audio data-code="KeyN" src="sounds2/chordBb.wav"></audio>
 
   <script>
-    // const keys = Array.from(document.querySelectorAll('.key'));
-    // keys.forEach((key) => {
-    //   key.addEventListener('transitionend', removeTransition);
-    //   key.addEventListener("click", function(e) {
-    //     key.classList.add("playing");
-    //     const audio = document.querySelector(`audio[data-code="${key.dataset.code}"]`);
-    //     audio.currentTime = 0;
-    //     audio.play();
-    //   })
-    // });
-
 
     /*******************************/
     /* Declare costants & variables*/
@@ -208,6 +197,7 @@
 
     keys.addEventListener('click', onKeyClick);
     chords.addEventListener('click', onKeyClick);
+    chords.addEventListener('click', glow);
 
     document.addEventListener('keydown', playSound);
     document.addEventListener('keyup', stopSound);
@@ -240,12 +230,6 @@
       audio.play();
     }
 
-    function removeTransition(e) {
-      if (e.propertyName !== 'transform') return;
-      const key = e.target.closest('button') || e.target
-      key.classList.remove('playing', 'glow', 'chordIndicatorOn');
-    }
-
     function playSound(e) {
         console.log('playSound() called');
         let alreadyPressed = pressedKeys.indexOf(e.code) > -1;
@@ -260,16 +244,16 @@
             if (!key) console.warn('Audio without key UI found !!!')
             console.log('sound going to play!');
 
+            key.classList.add('playing');
+            audio.currentTime = 0;
+            audio.play();
+
             const isChord = key.getAttribute('data-chord');
             if (isChord) {
               console.log('Key is Chord!');
               const event = { target: key };
               glow(event);
             }
-
-            key.classList.add('playing');
-            audio.currentTime = 0;
-            audio.play();
         } else console.log('already pressed!');
     }
 
@@ -282,50 +266,6 @@
         console.log('pressedKeys:', pressedKeys);
     }
 
-
-    /****************/
-    /* Unstructured */
-    /****************/
-
-    // const keyC1 = document.querySelector('div[data-note="C1"');
-    // const keyDb1 = document.querySelector('div[data-note="Db1"');
-    // const keyD1 = document.querySelector('div[data-note="D1"');
-    // const keyEb1 = document.querySelector('div[data-note="Eb1"');
-    // const keyE1 = document.querySelector('div[data-note="E1"');
-    // const keyF1 = document.querySelector('div[data-note="F1"');
-    // const keyGb1 = document.querySelector('div[data-note="Gb1"');
-    // const keyG1 = document.querySelector('div[data-note="G1"');
-    // const keyAb1 = document.querySelector('div[data-note="Ab1"');
-    // const keyA1 = document.querySelector('div[data-note="A1"');
-    // const keyBb1 = document.querySelector('div[data-note="Bb1"');
-    // const keyB1 = document.querySelector('div[data-note="B1"');
-    // const keyC2 = document.querySelector('div[data-note="C2"');
-    // const keyDb2 = document.querySelector('div[data-note="Db2"');
-    // const keyD2 = document.querySelector('div[data-note="D2"');
-    // const keyEb2 = document.querySelector('div[data-note="Eb2"');
-    // const keyE2 = document.querySelector('div[data-note="E2"');
-    // const keyF2 = document.querySelector('div[data-note="F2"');
-    // const keyGb2 = document.querySelector('div[data-note="Gb2"');
-    // const keyG2 = document.querySelector('div[data-note="G2"');
-    // const keyAb2 = document.querySelector('div[data-note="Ab2"');
-    // const keyA2 = document.querySelector('div[data-note="A2"');
-    // const keyBb2 = document.querySelector('div[data-note="Bb2"');
-    // const keyB2 = document.querySelector('div[data-note="B2"');
-    // const keyC3 = document.querySelector('div[data-note="C3"');
-    // const keyDb3 = document.querySelector('div[data-note="Db3"');
-    // const keyD3 = document.querySelector('div[data-note="D3"');
-    // const keyEb3 = document.querySelector('div[data-note="Eb3"');
-    // const keyE3 = document.querySelector('div[data-note="E3"');
-    // const keyF3 = document.querySelector('div[data-note="F3"');
-    // const keyGb3 = document.querySelector('div[data-note="Gb3"');
-    // const keyG3 = document.querySelector('div[data-note="G3"');
-    // const keyAb3 = document.querySelector('div[data-note="Ab3"');
-    // const keyA3 = document.querySelector('div[data-note="A3"');
-    // const keyBb3 = document.querySelector('div[data-note="Bb3"');
-    // const keyB3 = document.querySelector('div[data-note="B3"');
-
-    chords.addEventListener('click', glow);
-
     function glow(e) {
         const clickedChord = e.target.closest('[data-chord]')
         console.log('clickedChord:', clickedChord);
@@ -335,6 +275,12 @@
         document.querySelector(`#show${chordNum}`).classList.add('chordIndicatorOn');
         const chordKeys = document.querySelectorAll(`[data-chords*=chord${chordNum}]`)
         chordKeys.forEach(key => key.classList.add('glow'));
+    }
+
+    function removeTransition(e) {
+      if (e.propertyName !== 'transform') return;
+      const key = e.target.closest('button') || e.target
+      key.classList.remove('playing', 'glow', 'chordIndicatorOn');
     }
 
   </script>
