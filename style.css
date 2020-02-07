@@ -41,7 +41,34 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    margin-bottom: 24vh;
+    margin-bottom: 20vh;
+}
+
+.showChords {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 0.8rem 0.8rem 0rem 0rem;
+  margin: 0rem 2.8rem;
+}
+
+.chordIndicatorOff {
+  border: 0em;
+  margin: 0 8rem 0 8rem;
+  font-size: 7rem;
+  font-weight: bold;
+  padding: 1rem .5rem;
+  transition: all 0.8s ease;
+  width: 10rem;
+  text-align: center;
+  text-shadow: -1px -1px 0 rgb(117, 117, 117), 1px -1px 0 rgb(117, 117, 117), 
+  -1px 1px 0 rgb(117, 117, 117), 1px 1px 0 rgb(117, 117, 117);
+}
+
+.chordIndicatorOn {
+  transform: scale(1.05);
+  color: #b6b6b6d7;
+  text-shadow:  0 0 0.5rem ##ffffff63;
 }
 
 .showKeys {
@@ -76,17 +103,10 @@ body {
   text-shadow: 0 0 .5rem black;
 }
 
-.keyFirst {
-  border-radius: 0.8rem 0rem 0.8rem 0.8rem;
-}
-
-.keyLast {
-  border-radius: 0rem 0.8rem 0.8rem 0.8rem;
-}
-
 .white {
   --width: 60px;
   height: 140px;
+  border-color: rgb(59, 59, 59);
 }
 
 .black {
@@ -96,6 +116,7 @@ body {
   margin-right: -17px;
   z-index: 2;
   background: black;
+  border-color: rgb(59, 59, 59);
 }
 
 @media screen and (max-width: 1350px) {
@@ -111,7 +132,7 @@ body {
   box-shadow: 0 0 1rem #ffc600;
 }
 
-.glow {
+.glowChord {
   transform: scale(0.95);
   background-color: #ffc600;
   box-shadow: 0 0 1rem #ffc600;
@@ -131,7 +152,7 @@ kbd {
 .menu {
     display: flex;
     flex: 1;
-    height: 3vh;
+    height: 30px;
     align-items: center;
     justify-content: center;
     background: rgb(0, 0, 0);
