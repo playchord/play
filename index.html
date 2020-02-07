@@ -197,16 +197,17 @@
 
     keys.addEventListener('click', onKeyClick);
     chords.addEventListener('click', onKeyClick);
-    nav.addEventListener('click', changeBackground);
 
     document.addEventListener('keydown', onKeyDown);
     document.addEventListener('keyup', onKeyUp);
 
-    keys.addEventListener('transitionend', removeTransition);
-    chords.addEventListener('transitionend', removeTransition);
-    keyboard.addEventListener('transitionend', removeTransition);
-    chordHints.addEventListener('transitionend', removeTransition);
-    nav.addEventListener('transitionend', removeTransition);
+    keys.addEventListener('transitionend', onTransitionEnd);
+    chords.addEventListener('transitionend', onTransitionEnd);
+    keyboard.addEventListener('transitionend', onTransitionEnd);
+    chordHints.addEventListener('transitionend', onTransitionEnd);
+    nav.addEventListener('transitionend', onTransitionEnd);
+
+    nav.addEventListener('click', changeBackground);
 
 
     /********************/
@@ -219,7 +220,7 @@
       key.classList.add('playing');
 
       playSound(key.dataset.code);
-      highlightChord(key);
+      makeChordGlow(key);
     }
 
     function onKeyDown(e) {
@@ -231,11 +232,11 @@
           pressedKeys.push(e.code);
 
           const key = document.querySelector(`button[data-code="${e.code}"]`);
-          if (!key) console.warn('Audio without key UI found !!!')
-          else key.classList.add('playing');
+          if (!key) return;
+          key.classList.add('playing');
 
           playSound(e.code);
-          highlightChord(key);
+          makeChordGlow(key);
       } else console.log('already pressed!');
     }
 
@@ -246,17 +247,23 @@
       const keyIndex = pressedKeys.indexOf(e.code)
       pressedKeys.splice(keyIndex, 1);
       console.log('pressedKeys:', pressedKeys);
+
+      const key = document.querySelector(`button[data-code="${e.code}"]`);
+      if (!key) return;
+
+      removeHighlighting(key);
     }
 
     function playSound(keyCode) {
       const audio = document.querySelector(`audio[data-code="${keyCode}"]`);
-      if (!audio) return;
+      if (!audio) return false;
       console.log('sound going to play!');
       audio.currentTime = 0;
       audio.play();
+      return true;
     }
 
-    function highlightChord (keyElement) {
+    function makeChordGlow (keyElement) {
       const isChord = keyElement.getAttribute('data-chord');
       if (isChord) {
         console.log('Key is Chord!');
@@ -276,9 +283,15 @@
         chordKeys.forEach(key => key.classList.add('glow'));
     }
 
-    function removeTransition(e) {
+    function onTransitionEnd(e) {
       if (e.propertyName !== 'transform') return;
-      const key = e.target.closest('button') || e.target
+      const key = e.target.closest('button') || e.target;
+      const keyCode = key.getAttribute('data-code');
+      const keyIsPressed = pressedKeys.indexOf(keyCode) > -1
+      if (!keyIsPressed) removeHighlighting(key);
+    }
+
+    function removeHighlighting(key) {
       key.classList.remove('playing', 'glow', 'chordIndicatorOn');
     }
 
