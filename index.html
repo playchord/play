@@ -197,7 +197,6 @@
 
     keys.addEventListener('click', onKeyClick);
     chords.addEventListener('click', onKeyClick);
-    chords.addEventListener('click', glow);
     nav.addEventListener('click', changeBackground);
 
     document.addEventListener('keydown', playSound);
@@ -217,10 +216,19 @@
     function onKeyClick(e) {
       const key = e.target.closest('button');
       if (!key) return;
-      key.classList.add('playing');
       const audio = document.querySelector(`audio[data-code="${key.dataset.code}"]`);
+      if (!audio) return;
+
+      key.classList.add('playing');
       audio.currentTime = 0;
       audio.play();
+
+      const isChord = key.getAttribute('data-chord');
+      if (isChord) {
+        console.log('Key is Chord!');
+        const event = { target: key };
+        glow(event);
+      }
     }
 
     function playSound(e) {
