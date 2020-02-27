@@ -9,33 +9,10 @@
 <body>
   <nav>
     <div class="menu">
-      <select class="selector">
-        <option>C major</option>
-        <option>Db major</option>
-        <option>D major</option>
-        <option>Eb major</option>
-        <option>E major</option>
-        <option>F major</option>
-        <option>Gb major</option>
-        <option>G major</option>
-        <option>Ab major</option>
-        <option>A major</option>
-        <option>Bb major</option>
-        <option>B major</option>
-        <option>C minor</option>
-        <option>Db minor</option>
-        <option>D minor</option>
-        <option>Eb minor</option>
-        <option>E minor</option>
-        <option>F minor</option>
-        <option>Gb minor</option>
-        <option>G minor</option>
-        <option>Ab minor</option>
-        <option>A minor</option>
-        <option>Bb minor</option>
-        <option>B minor</option>
-      </select>
-      <button class="menuItem">
+      <button class="menuItem" id="tonalitySelector">
+        Tonality selector On/Off
+      </button>
+      <button class="menuItem" id="background">
         Change background
       </button>
       <button class="menuItem" onclick="window.location.href = 'index2.html'">
@@ -43,6 +20,39 @@
       </button>
     </div>
   </nav>
+
+<main class="mainContainer">
+  <div class="tonalitiesContainer">
+    <div class="tonalities">
+      <button data-code="Cmaj" class="tonality"> Cmaj </button>
+      <button data-code="Cmaj" class="tonality"> Dbmaj </button>
+      <button data-code="Cmaj" class="tonality"> Dmaj </button>
+      <button data-code="Cmaj" class="tonality"> Ebmaj </button>
+      <button data-code="Cmaj" class="tonality"> Emaj </button>
+      <button data-code="Cmaj" class="tonality"> Fmaj </button>
+      <button data-code="Cmaj" class="tonality"> Gbmaj </button>
+      <button data-code="Cmaj" class="tonality"> Gmaj </button>
+      <button data-code="Cmaj" class="tonality"> Abmaj </button>
+      <button data-code="Cmaj" class="tonality"> Amaj </button>
+      <button data-code="Cmaj" class="tonality"> Bbmaj </button>
+      <button data-code="Cmaj" class="tonality"> Bmaj </button>
+  </div>
+
+  <div class="tonalities">
+    <button data-code="Cmaj" class="tonality"> Cmin </button>
+    <button data-code="Cmaj" class="tonality"> Dbmin </button>
+    <button data-code="Cmaj" class="tonality"> Dmin </button>
+    <button data-code="Cmaj" class="tonality"> Ebmin </button>
+    <button data-code="Cmaj" class="tonality"> Emin </button>
+    <button data-code="Cmaj" class="tonality"> Fmin </button>
+    <button data-code="Cmaj" class="tonality"> Gbmin </button>
+    <button data-code="Cmaj" class="tonality"> Gmin </button>
+    <button data-code="Cmaj" class="tonality"> Abmin </button>
+    <button data-code="Cmaj" class="tonality"> Amin </button>
+    <button data-code="Cmaj" class="tonality"> Bbmin </button>
+    <button data-code="Cmaj" class="tonality"> Bmin </button>
+  </div>
+</div>
 
     <div class="keys">
         <button data-code="KeyA" class="key">
@@ -193,6 +203,7 @@
             <div data-note="B3" class="key2 keyLast white">
             </div>
         </div>
+  </main>
             
     <audio data-code="KeyA" src="sounds2/C.wav"></audio>
     <audio data-code="KeyS" src="sounds2/D.wav"></audio>
@@ -210,26 +221,19 @@
     <audio data-code="KeyN" src="sounds2/chordBb.wav"></audio>
 
   <script>
-    // const keys = Array.from(document.querySelectorAll('.key'));
-    // keys.forEach((key) => {
-    //   key.addEventListener('transitionend', removeTransition);
-    //   key.addEventListener("click", function(e) {
-    //     key.classList.add("playing");
-    //     const audio = document.querySelector(`audio[data-code="${key.dataset.code}"]`);
-    //     audio.currentTime = 0;
-    //     audio.play();
-    //   })
-    // });
 
     const keys = document.querySelector('.keys')
     const keys2 = document.querySelector('.keys2')
     const bottomKeys = document.querySelector('.showKeys')
     const chords = document.querySelector('.showChords')
+    const html = document.querySelector('html');
+    const background = document.querySelector('#background');
+    const tonality = document.querySelector('#tonalitySelector'); 
+    const tonalitiesContainer = document.querySelector('.tonalitiesContainer'); 
 
     keys.addEventListener('click', onKeyClick);
     keys2.addEventListener('click', onKeyClick);
 
-    // COOL SHIT BROH!
     keys.addEventListener('transitionend', removeTransition);
     keys2.addEventListener('transitionend', removeTransition);
     bottomKeys.addEventListener('transitionend', removeTransition);
@@ -293,16 +297,17 @@
     }
   }
 
-    const html = document.querySelector('html');
-    const nav = document.querySelector('.menuItem');
-    nav.addEventListener('transitionend', removeTransition);
-    nav.addEventListener('click', function() {
-      if (html.classList.contains('html')) {
-      html.classList.replace('html', 'html2');
-      } else {
-        html.classList.replace('html2', 'html');
-      }
+
+    background.addEventListener('transitionend', removeTransition);
+    background.addEventListener('click', function() {
+      html.classList.toggle('html2');
     });
+
+    tonality.addEventListener('transitionend', removeTransition);
+    tonality.addEventListener('click', function(e) {
+      tonalitiesContainer.classList.toggle('tonalitiesContainerOff');
+    });
+
 
     const keyC1 = document.querySelector('div[data-note="C1"');
     const keyDb1 = document.querySelector('div[data-note="Db1"');
