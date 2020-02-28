@@ -19,6 +19,9 @@
       <button class="menuItem" onclick="window.location.href = 'index2.html'">
         Go to Drum Kit
       </button>
+      <button class="menuItem" id="fullScreen">
+        Full Screen
+      </button>
     </div>
   </nav>
 
@@ -231,6 +234,9 @@
     const background = document.querySelector('#background');
     const tonality = document.querySelector('#tonalitySelector'); 
     const tonalitiesContainer = document.querySelector('.tonalitiesContainer'); 
+    const fullScreen = document.querySelector('#fullScreen');
+
+    fullScreen.addEventListener('click', openFullscreen);
 
     keys.addEventListener('click', onKeyClick);
     keys2.addEventListener('click', onKeyClick);
@@ -406,6 +412,25 @@
     keyBb2.classList.add('glowChord');
     keyD3.classList.add('glowChord');
     keyF3.classList.add('glowChord');
+}
+
+
+// FULL SCREEN BUTTON //
+
+/* Get the documentElement (<html>) to display the page in fullscreen */
+  var elem = document.documentElement;
+
+/* View in fullscreen */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
 }
 
   </script>
