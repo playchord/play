@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Piano</title>
 </head>
@@ -24,35 +25,35 @@
 <main class="mainContainer">
   <div class="tonalitiesContainer">
     <div class="tonalities">
-      <button data-code="Cmaj" class="tonality"> Cmaj </button>
-      <button data-code="Cmaj" class="tonality"> Dbmaj </button>
-      <button data-code="Cmaj" class="tonality"> Dmaj </button>
-      <button data-code="Cmaj" class="tonality"> Ebmaj </button>
-      <button data-code="Cmaj" class="tonality"> Emaj </button>
-      <button data-code="Cmaj" class="tonality"> Fmaj </button>
-      <button data-code="Cmaj" class="tonality"> Gbmaj </button>
-      <button data-code="Cmaj" class="tonality"> Gmaj </button>
-      <button data-code="Cmaj" class="tonality"> Abmaj </button>
-      <button data-code="Cmaj" class="tonality"> Amaj </button>
-      <button data-code="Cmaj" class="tonality"> Bbmaj </button>
-      <button data-code="Cmaj" class="tonality"> Bmaj </button>
-  </div>
+      <button data-code="Cmaj" class="tonality"> C </button>
+      <button data-code="Cmaj" class="tonality"> Db </button>
+      <button data-code="Cmaj" class="tonality"> D </button>
+      <button data-code="Cmaj" class="tonality"> Eb </button>
+      <button data-code="Cmaj" class="tonality"> E </button>
+      <button data-code="Cmaj" class="tonality"> F </button>
+      <button data-code="Cmaj" class="tonality"> Gb </button>
+      <button data-code="Cmaj" class="tonality"> G </button>
+      <button data-code="Cmaj" class="tonality"> Ab </button>
+      <button data-code="Cmaj" class="tonality"> A </button>
+      <button data-code="Cmaj" class="tonality"> Bb </button>
+      <button data-code="Cmaj" class="tonality"> B </button>
+    </div>
 
-  <div class="tonalities">
-    <button data-code="Cmaj" class="tonality"> Cmin </button>
-    <button data-code="Cmaj" class="tonality"> Dbmin </button>
-    <button data-code="Cmaj" class="tonality"> Dmin </button>
-    <button data-code="Cmaj" class="tonality"> Ebmin </button>
-    <button data-code="Cmaj" class="tonality"> Emin </button>
-    <button data-code="Cmaj" class="tonality"> Fmin </button>
-    <button data-code="Cmaj" class="tonality"> Gbmin </button>
-    <button data-code="Cmaj" class="tonality"> Gmin </button>
-    <button data-code="Cmaj" class="tonality"> Abmin </button>
-    <button data-code="Cmaj" class="tonality"> Amin </button>
-    <button data-code="Cmaj" class="tonality"> Bbmin </button>
-    <button data-code="Cmaj" class="tonality"> Bmin </button>
+    <div class="tonalities">
+    <button data-code="Cmaj" class="tonality"> Cm </button>
+    <button data-code="Cmaj" class="tonality"> Dbm </button>
+    <button data-code="Cmaj" class="tonality"> Dm </button>
+    <button data-code="Cmaj" class="tonality"> Ebm </button>
+    <button data-code="Cmaj" class="tonality"> Em </button>
+    <button data-code="Cmaj" class="tonality"> Fm </button>
+    <button data-code="Cmaj" class="tonality"> Gbm </button>
+    <button data-code="Cmaj" class="tonality"> Gm </button>
+    <button data-code="Cmaj" class="tonality"> Abm </button>
+    <button data-code="Cmaj" class="tonality"> Am </button>
+    <button data-code="Cmaj" class="tonality"> Bbm </button>
+    <button data-code="Cmaj" class="tonality"> Bm </button>
+    </div>
   </div>
-</div>
 
     <div class="keys">
         <button data-code="KeyA" class="key">
@@ -304,7 +305,7 @@
     });
 
     tonality.addEventListener('transitionend', removeTransition);
-    tonality.addEventListener('click', function(e) {
+    tonality.addEventListener('click', function() {
       tonalitiesContainer.classList.toggle('tonalitiesContainerOff');
     });
 
