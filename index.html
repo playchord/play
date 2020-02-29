@@ -26,35 +26,37 @@
   </nav>
 
 <main class="mainContainer">
-  <div class="tonalitiesContainer">
-    <div class="tonalities">
-      <button data-code="Cmaj" class="tonality"> C </button>
-      <button data-code="Cmaj" class="tonality"> Db </button>
-      <button data-code="Cmaj" class="tonality"> D </button>
-      <button data-code="Cmaj" class="tonality"> Eb </button>
-      <button data-code="Cmaj" class="tonality"> E </button>
-      <button data-code="Cmaj" class="tonality"> F </button>
-      <button data-code="Cmaj" class="tonality"> Gb </button>
-      <button data-code="Cmaj" class="tonality"> G </button>
-      <button data-code="Cmaj" class="tonality"> Ab </button>
-      <button data-code="Cmaj" class="tonality"> A </button>
-      <button data-code="Cmaj" class="tonality"> Bb </button>
-      <button data-code="Cmaj" class="tonality"> B </button>
-    </div>
+  <div class="firstContainer">
+    <div class="tonalitiesContainer">
+      <div class="tonalities">
+        <button data-code="Cmaj" class="tonality"> C </button>
+        <button data-code="Cmaj" class="tonality"> Db </button>
+        <button data-code="Cmaj" class="tonality"> D </button>
+        <button data-code="Cmaj" class="tonality"> Eb </button>
+        <button data-code="Cmaj" class="tonality"> E </button>
+        <button data-code="Cmaj" class="tonality"> F </button>
+        <button data-code="Cmaj" class="tonality"> Gb </button>
+        <button data-code="Cmaj" class="tonality"> G </button>
+        <button data-code="Cmaj" class="tonality"> Ab </button>
+        <button data-code="Cmaj" class="tonality"> A </button>
+        <button data-code="Cmaj" class="tonality"> Bb </button>
+        <button data-code="Cmaj" class="tonality"> B </button>
+      </div>
 
-    <div class="tonalities">
-    <button data-code="Cmaj" class="tonality"> Cm </button>
-    <button data-code="Cmaj" class="tonality"> Dbm </button>
-    <button data-code="Cmaj" class="tonality"> Dm </button>
-    <button data-code="Cmaj" class="tonality"> Ebm </button>
-    <button data-code="Cmaj" class="tonality"> Em </button>
-    <button data-code="Cmaj" class="tonality"> Fm </button>
-    <button data-code="Cmaj" class="tonality"> Gbm </button>
-    <button data-code="Cmaj" class="tonality"> Gm </button>
-    <button data-code="Cmaj" class="tonality"> Abm </button>
-    <button data-code="Cmaj" class="tonality"> Am </button>
-    <button data-code="Cmaj" class="tonality"> Bbm </button>
-    <button data-code="Cmaj" class="tonality"> Bm </button>
+      <div class="tonalities">
+      <button data-code="Cmaj" class="tonality"> Cm </button>
+      <button data-code="Cmaj" class="tonality"> Dbm </button>
+      <button data-code="Cmaj" class="tonality"> Dm </button>
+      <button data-code="Cmaj" class="tonality"> Ebm </button>
+      <button data-code="Cmaj" class="tonality"> Em </button>
+      <button data-code="Cmaj" class="tonality"> Fm </button>
+      <button data-code="Cmaj" class="tonality"> Gbm </button>
+      <button data-code="Cmaj" class="tonality"> Gm </button>
+      <button data-code="Cmaj" class="tonality"> Abm </button>
+      <button data-code="Cmaj" class="tonality"> Am </button>
+      <button data-code="Cmaj" class="tonality"> Bbm </button>
+      <button data-code="Cmaj" class="tonality"> Bm </button>
+      </div>
     </div>
   </div>
 
@@ -230,7 +232,7 @@
     const keys2 = document.querySelector('.keys2')
     const bottomKeys = document.querySelector('.showKeys')
     const chords = document.querySelector('.showChords')
-    const html = document.querySelector('html');
+    const body = document.querySelector('body');
     const background = document.querySelector('#background');
     const tonality = document.querySelector('#tonalitySelector'); 
     const tonalitiesContainer = document.querySelector('.tonalitiesContainer'); 
@@ -307,7 +309,7 @@
 
     background.addEventListener('transitionend', removeTransition);
     background.addEventListener('click', function() {
-      html.classList.toggle('html2');
+      body.classList.toggle('body2');
     });
 
     tonality.addEventListener('transitionend', removeTransition);
@@ -418,7 +420,7 @@
 // FULL SCREEN BUTTON //
 
 /* Get the documentElement (<html>) to display the page in fullscreen */
-  var elem = document.documentElement;
+  let elem = document.documentElement;
 
 /* View in fullscreen */
 function openFullscreen() {
@@ -436,4 +438,3 @@ function openFullscreen() {
   </script>
 
 </body>
-</html>
