@@ -31,11 +31,45 @@ body {
   align-items: center;
 }
 
-.firstContainer {
-  height: 270px;
+.tonalitiesContainer {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  height: 120px;
+  width: 800px;
+  margin-top: 20px;
+  margin-bottom: 150px;
   transition: all .07s ease;
+  background-color: rgba(0, 0, 0, 0.328);
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: ease 1s;
+}
+
+.majorMinor {
+  display: flex;
+  justify-content: center;
+}
+
+.tonalityButtons {
+  display: flex;
+  align-items: center;
+}
+
+.tonality-button {
+  border: 2px solid rgb(185, 168, 89);
+  border-radius: .5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+  width: 10rem;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(209, 206, 178);
+  cursor: pointer;
+  outline: none;
 }
 
 .keys {
@@ -50,41 +84,6 @@ body {
     align-items: flex-end;
     justify-content: center;
     margin-bottom: 20vh;
-}
-
-.tonalitiesContainer {
-  border-radius: .6rem;
-  font-size: 1.5rem;
-  padding: 1rem .5rem;
-  width: fit-content;
-  height: fit-content;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.616);
-  text-shadow: 0 0 .5rem black;
-}
-
-.tonalitiesContainerOff {
-  display: none;
-  height: fit-content;
-}
-
-.tonalities {
-  display: flex;
-  height: 4vh;
-  justify-content: center;
-}
-
-.tonality {
-  width: 60px;
-  border: .1rem solid rgb(255, 255, 255);
-  border-radius: .5rem;
-  margin: .5rem;
-  font-size: 1.5rem;
-  transition: all .07s ease;
-  text-align: center;
-  color: rgb(250, 250, 250);
-  background: rgba(0, 0, 0, 0.616);
-  text-shadow: 0 0 .5rem black;
 }
 
 .showChords {
@@ -233,6 +232,7 @@ button {
 a {
   text-decoration: none;
   }
+  
 
   @media screen and (max-width: 1850px) {
     .black {
@@ -279,7 +279,8 @@ a {
     font-size: 4.5rem;
     margin: 1rem 5rem;
   }
-  }
+
+}
 
   @media screen and (max-width: 2100px) {
     .firstContainer {
@@ -289,3 +290,13 @@ a {
       margin-bottom: 9vh;
     }
   }
+
+.--selected {
+  color: black;
+  background-color: #ffc600;
+}
+  
+ .--visible {
+  visibility: visible;
+  opacity: 1;
+}

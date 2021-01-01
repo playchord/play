@@ -2,13 +2,16 @@
   "name": "drum-kit",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -19,15 +22,5 @@
   "bugs": {
     "url": "https://github.com/playchord/play/issues"
   },
-  "homepage": "https://github.com/playchord/play#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.6",
-    "@babel/node": "^7.8.7",
-    "@babel/preset-env": "^7.9.6",
-    "nodemon": "^2.0.3"
-  }
+  "homepage": "https://github.com/playchord/play#readme"
 }

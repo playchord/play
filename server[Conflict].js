@@ -16,6 +16,11 @@ app.get('/', (req, res) => {
     res.sendFile('./dist/index.html', {root: link})
 });
 
+app.get('/drum', (req, res) => {
+    console.log('drum opened')
+    res.sendFile('./dist/index2.html', {root: link})
+});
+
 app.get('/test', (req, res) => {
     console.log('test opened')
     res.sendFile('./dist/index_test.html', {root: link})

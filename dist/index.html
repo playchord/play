@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" class="html">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
+      <title>Piano</title>
+  </head>
+  <body>
+    <nav>
+      <div class="menu">
+        <button class="menuItem" id="tonalitySelector">
+          Tonalities
+        </button>
+        <button class="menuItem" id="background">
+          Change background
+        </button>
+        <!-- <button class="menuItem" onclick="window.location.href = 'index2.html'">
+          Go to Drum Kit
+        </button> -->
+        <button class="menuItem" id="fullScreen">
+          Full Screen
+        </button>
+      </div>
+    </nav>
+
+  <main class="mainContainer">
+    <div class="tonalitiesContainer">
+      <div class="majorMinor">
+        <div class="tonality-button">Major</div>
+        <div class="tonality-button">Minor</div>
+      </div>
+      <div class="tonalityButtons">
+        <div class="tonality-button">C</div>
+        <div class="tonality-button">Db</div>
+        <div class="tonality-button">D</div>
+        <div class="tonality-button">Eb</div>
+        <div class="tonality-button">E</div>
+        <div class="tonality-button">F</div>
+        <div class="tonality-button">Gb</div>
+        <div class="tonality-button">G</div>
+        <div class="tonality-button">Ab</div>
+        <div class="tonality-button">A</div>
+        <div class="tonality-button">Bb</div>
+        <div class="tonality-button">B</div>
+      </div>
+    </div>
+
+      <div class="keys">
+          <button data-code="KeyA" class="key">
+              <kbd class="button-font">A</kbd>
+              <span class="sound">I</span>
+            </button>
+            <button data-code="KeyS" class="key">
+              <kbd class="button-font">S</kbd>
+              <span class="sound">II</span>
+            </button>
+            <button data-code="KeyD" class="key">
+              <kbd class="button-font">D</kbd>
+              <span class="sound">III</span>
+            </button>
+            <button data-code="KeyF" class="key">
+              <kbd class="button-font">F</kbd>
+              <span class="sound">IV</span>
+            </button>
+            <button data-code="KeyG" class="key">
+              <kbd class="button-font">G</kbd>
+              <span class="sound">V</span>
+            </button>
+            <button data-code="KeyH" class="key">
+              <kbd class="button-font">H</kbd>
+              <span class="sound">VI</span>
+            </button>
+            <button data-code="KeyJ" class="key">
+              <kbd class="button-font">J</kbd>
+              <span class="sound">VII</span>
+            </button>
+            <button data-code="KeyK" class="key">
+              <kbd class="button-font">K</kbd>
+              <span class="sound">VIII</span>
+            </button>
+      </div>
+
+      <div class="keys2">
+            <button id="chord1" data-code="KeyX" class="key">
+                <kbd class="button-font">X</kbd>
+                <span class="sound">I CHORD</span>
+              </button>
+              <button id="chord2" data-code="KeyC" class="key">
+                <kbd class="button-font">C</kbd>
+                <span class="sound">IV CHORD</span>
+              </button>
+              <button id="chord3" data-code="KeyV" class="key">
+                <kbd class="button-font">V</kbd>
+                <span class="sound">V CHORD</span>
+              </button>
+              <button id="chord4" data-code="KeyB" class="key">
+                <kbd class="button-font">B</kbd>
+                <span class="sound">VI CHORD</span>
+              </button>
+              <button id="chord5" data-code="KeyN" class="key">
+                <kbd class="button-font">N</kbd>
+                <span class="sound">VIIb CHORD</span>
+      </div>
+
+      <div class="showChords">
+            <div id="show1" class="chordIndicatorOff">
+                <span>C</span>
+              </div>
+              <div id="show2" class="chordIndicatorOff">
+                <span>F</span>
+              </div>
+              <div id="show3" class="chordIndicatorOff">
+                <span>G</span>
+              </div>
+              <div id="show4" class="chordIndicatorOff">
+                <span>Am</span>
+              </div>
+              <div id="show5" class="chordIndicatorOff">
+                <span>Bb</span>
+              </div>
+      </div>
+
+          <div class="showKeys">
+              <div data-note="C1" class="key2 keyFirst white">
+              </div>
+              <div data-note="Db1" class="key2 black">
+              </div>
+              <div data-note="D1" class="key2 white">
+              </div>
+              <div data-note="Eb1" class="key2 black">
+              </div>
+              <div data-note="E1" class="key2 white">
+              </div>
+              <div data-note="F1" class="key2 white">
+              </div>
+              <div data-note="Gb1" class="key2 black">
+              </div>
+              <div data-note="G1" class="key2 white">
+              </div>
+              <div data-note="Ab1" class="key2 black">
+              </div>
+              <div data-note="A1" class="key2 white">
+              </div>
+              <div data-note="Bb1" class="key2 black">
+              </div>
+              <div data-note="B1" class="key2 white">
+              </div>
+              <div data-note="C2" class="key2 white">
+              </div>
+              <div data-note="Db2" class="key2 black">
+              </div>
+              <div data-note="D2" class="key2 white">
+              </div>
+              <div data-note="Eb2" class="key2 black">
+              </div>
+              <div data-note="E2" class="key2 white">
+              </div>
+              <div data-note="F2" class="key2 white">
+              </div>
+              <div data-note="Gb2" class="key2 black">
+              </div>
+              <div data-note="G2" class="key2 white">
+              </div>
+              <div data-note="Ab2" class="key2 black">
+              </div>
+              <div data-note="A2" class="key2 white">
+              </div>
+              <div data-note="Bb2" class="key2 black">
+              </div>
+              <div data-note="B2" class="key2 white">
+              </div>
+              <div data-note="C3" class="key2 white">
+              </div>
+              <div data-note="Db3" class="key2 black">
+              </div>
+              <div data-note="D3" class="key2 white">
+              </div>
+              <div data-note="Eb3" class="key2 black">
+              </div>
+              <div data-note="E3" class="key2 white">
+              </div>
+              <div data-note="F3" class="key2 white">
+              </div>
+              <div data-note="Gb3" class="key2 black">
+              </div>
+              <div data-note="G3" class="key2 white">
+              </div>
+              <div data-note="Ab3" class="key2 black">
+              </div>
+              <div data-note="A3" class="key2 white">
+              </div>
+              <div data-note="Bb3" class="key2 black">
+              </div>
+              <div data-note="B3" class="key2 keyLast white">
+              </div>
+          </div>
+    </main>
+              
+      <audio data-code="KeyA" src="sounds2/C.wav"></audio>
+      <audio data-code="KeyS" src="sounds2/D.wav"></audio>
+      <audio data-code="KeyD" src="sounds2/E.wav"></audio>
+      <audio data-code="KeyF" src="sounds2/F.wav"></audio>
+      <audio data-code="KeyG" src="sounds2/G.wav"></audio>
+      <audio data-code="KeyH" src="sounds2/A.wav"></audio>
+      <audio data-code="KeyJ" src="sounds2/B.wav"></audio>
+      <audio data-code="KeyK" src="sounds2/C2.wav"></audio>
+
+      <audio class="chord" data-code="KeyX" src="sounds2/chordC.wav"></audio>
+      <audio class="chord" data-code="KeyC" src="sounds2/chordF.wav"></audio>
+      <audio class="chord" data-code="KeyV" src="sounds2/chordG.wav"></audio>
+      <audio class="chord" data-code="KeyB" src="sounds2/chordAm.wav"></audio>
+      <audio class="chord" data-code="KeyN" src="sounds2/chordBb.wav"></audio>
+
+    <script>
+
+      const keys = document.querySelector('.keys')
+      const keys2 = document.querySelector('.keys2')
+      const bottomKeys = document.querySelector('.showKeys')
+      const chordButtons = document.querySelector('.showChords')
+      const chordSounds = Array.from(document.querySelectorAll('.chord'))
+      const body = document.querySelector('body');
+      const background = document.querySelector('#background');
+      const tonalitySelector = document.querySelector('#tonalitySelector'); 
+      const tonalityButtons = Array.from(document.querySelectorAll('.tonality-button'))
+      const fullScreen = document.querySelector('#fullScreen');
+
+      const alreadyPressed = [];
+
+      fullScreen.addEventListener('click', openFullscreen);
+
+      keys.addEventListener('click', onKeyClick);
+      keys2.addEventListener('click', onKeyClick);
+      
+      tonalitySelector.addEventListener('click', () => {
+        document.querySelector('.tonalitiesContainer').classList.toggle('--visible')
+        // fetch('http://localhost:5000/preset')
+        // .then(res => res.json())
+        // .then(newTon => {
+        //   newTon.newTonality.forEach((el, index) => { 
+        //     document.querySelector('#show' + (index + 1)).textContent = el; 
+        //   })
+        // })
+      });
+
+      keys.addEventListener('transitionend', removeTransition);
+      keys2.addEventListener('transitionend', removeTransition);
+      bottomKeys.addEventListener('transitionend', removeTransition);
+      chordButtons.addEventListener('transitionend', removeTransition);
+      tonalityButtons.forEach(button => button.addEventListener('click', selectTonality))
+      
+      document.addEventListener('keydown', onKeyDown);
+      document.addEventListener('keyup', onKeyUp);
+
+      function selectTonality(e) {
+        e.target.classList.toggle('--selected')
+        console.log(tonalityButtons)
+      }
+
+      function onKeyClick(e) {
+        const key = e.target.closest('button');
+        key.classList.add("playing");
+        const audio = document.querySelector(`audio[data-code="${key.dataset.code}"]`);
+        audio.currentTime = 0;
+        audio.play();
+      }
+
+      function removeTransition(e) {
+        if (e.propertyName !== 'transform') return;  
+        const key = e.target.closest('button') || e.target
+        key.classList.remove('playing', 'glowKey', 'glowChord', 'chordIndicatorOn');
+      }
+
+      function playSound(e) {
+        const audio = document.querySelector(`audio[data-code="${e.code}"]`);
+        const key = document.querySelector(`button[data-code="${e.code}"]`);
+        if (!audio) return;
+        if (key.id === 'chord1') {
+          glowChord1();
+          key.classList.add('playing');
+          chordSounds.forEach(sound => sound.pause())
+          audio.currentTime = 0;
+          audio.play();
+        } 
+        if (key.id === 'chord2') {
+          glowChord2();
+          key.classList.add('playing');
+          chordSounds.forEach(sound => sound.pause())
+          audio.currentTime = 0;
+          audio.play();
+        } 
+        if (key.id === 'chord3') {
+          glowChord3();
+          key.classList.add('playing');
+          chordSounds.forEach(sound => sound.pause())
+          audio.currentTime = 0;
+          audio.play();
+        } 
+        if (key.id === 'chord4') {
+          glowChord4();
+          key.classList.add('playing');
+          chordSounds.forEach(sound => sound.pause())
+          audio.currentTime = 0;
+          audio.play();
+        } 
+        if (key.id === 'chord5') {
+          glowChord5();
+          key.classList.add('playing');
+          chordSounds.forEach(sound => sound.pause())
+          audio.currentTime = 0;
+          audio.play();
+        } 
+        else {
+
+        key.classList.add('playing');
+        audio.currentTime = 0;
+        audio.play();
+      }
+    }
+
+    function onKeyDown(e) {
+      if (alreadyPressed.includes(e.code)) return;
+      alreadyPressed.push(e.code);
+      playSound(e)
+    }
+
+    function onKeyUp(e) {
+      let pressedKey = alreadyPressed.indexOf(e.code);
+      alreadyPressed.splice(pressedKey, 1)
+      console.log(alreadyPressed)
+    }
+
+      background.addEventListener('transitionend', removeTransition);
+      background.addEventListener('click', function() {
+        body.classList.toggle('body2');
+      });
+
+      const keyC1 = document.querySelector('div[data-note="C1"');
+      const keyDb1 = document.querySelector('div[data-note="Db1"');
+      const keyD1 = document.querySelector('div[data-note="D1"');
+      const keyEb1 = document.querySelector('div[data-note="Eb1"');
+      const keyE1 = document.querySelector('div[data-note="E1"');
+      const keyF1 = document.querySelector('div[data-note="F1"');
+      const keyGb1 = document.querySelector('div[data-note="Gb1"');
+      const keyG1 = document.querySelector('div[data-note="G1"');
+      const keyAb1 = document.querySelector('div[data-note="Ab1"');
+      const keyA1 = document.querySelector('div[data-note="A1"');
+      const keyBb1 = document.querySelector('div[data-note="Bb1"');
+      const keyB1 = document.querySelector('div[data-note="B1"');
+      const keyC2 = document.querySelector('div[data-note="C2"');
+      const keyDb2 = document.querySelector('div[data-note="Db2"');
+      const keyD2 = document.querySelector('div[data-note="D2"');
+      const keyEb2 = document.querySelector('div[data-note="Eb2"');
+      const keyE2 = document.querySelector('div[data-note="E2"');
+      const keyF2 = document.querySelector('div[data-note="F2"');
+      const keyGb2 = document.querySelector('div[data-note="Gb2"');
+      const keyG2 = document.querySelector('div[data-note="G2"');
+      const keyAb2 = document.querySelector('div[data-note="Ab2"');
+      const keyA2 = document.querySelector('div[data-note="A2"');
+      const keyBb2 = document.querySelector('div[data-note="Bb2"');
+      const keyB2 = document.querySelector('div[data-note="B2"');
+      const keyC3 = document.querySelector('div[data-note="C3"');
+      const keyDb3 = document.querySelector('div[data-note="Db3"');
+      const keyD3 = document.querySelector('div[data-note="D3"');
+      const keyEb3 = document.querySelector('div[data-note="Eb3"');
+      const keyE3 = document.querySelector('div[data-note="E3"');
+      const keyF3 = document.querySelector('div[data-note="F3"');
+      const keyGb3 = document.querySelector('div[data-note="Gb3"');
+      const keyG3 = document.querySelector('div[data-note="G3"');
+      const keyAb3 = document.querySelector('div[data-note="Ab3"');
+      const keyA3 = document.querySelector('div[data-note="A3"');
+      const keyBb3 = document.querySelector('div[data-note="Bb3"');
+      const keyB3 = document.querySelector('div[data-note="B3"');
+
+      const chordC = document.querySelector('button[data-code="KeyX"');
+      const chordF = document.querySelector('button[data-code="KeyC"');
+      const chordG = document.querySelector('button[data-code="KeyV"');
+      const chordA = document.querySelector('button[data-code="KeyB"');
+      const chordBb = document.querySelector('button[data-code="KeyN"');
+      
+
+      chordC.addEventListener('click', glowChord1)
+      chordF.addEventListener('click', glowChord2)
+      chordG.addEventListener('click', glowChord3)
+      chordA.addEventListener('click', glowChord4)
+      chordBb.addEventListener('click', glowChord5)
+      
+
+      function glowChord1(e) {
+      document.querySelector('#show1').classList.add('chordIndicatorOn');
+      keyC1.classList.add('glowChord');
+      keyC2.classList.add('glowChord');
+      keyG2.classList.add('glowChord');
+      keyC3.classList.add('glowChord');
+      keyE3.classList.add('glowChord');
+      keyG3.classList.add('glowChord');
+  }
+
+      function glowChord2(e) {
+      document.querySelector('#show2').classList.add('chordIndicatorOn');
+      keyF1.classList.add('glowChord');
+      keyF2.classList.add('glowChord');
+      keyA2.classList.add('glowChord');
+      keyC3.classList.add('glowChord');
+      keyF3.classList.add('glowChord');
+      keyA3.classList.add('glowChord');
+  }
+
+      function glowChord3(e) {
+      document.querySelector('#show3').classList.add('chordIndicatorOn');
+      keyG1.classList.add('glowChord');
+      keyG2.classList.add('glowChord');
+      keyB2.classList.add('glowChord');
+      keyD3.classList.add('glowChord');
+      keyG3.classList.add('glowChord');
+  }
+
+      function glowChord4(e) {
+      document.querySelector('#show4').classList.add('chordIndicatorOn');
+      keyA1.classList.add('glowChord');
+      keyE2.classList.add('glowChord');
+      keyA2.classList.add('glowChord');
+      keyC3.classList.add('glowChord');
+      keyE3.classList.add('glowChord');
+  }
+
+      function glowChord5(e) {
+      document.querySelector('#show5').classList.add('chordIndicatorOn');
+      keyBb1.classList.add('glowChord');
+      keyF2.classList.add('glowChord');
+      keyBb2.classList.add('glowChord');
+      keyD3.classList.add('glowChord');
+      keyF3.classList.add('glowChord');
+  }
+
+
+  // FULL SCREEN BUTTON //
+
+  /* Get the documentElement (<html>) to display the page in fullscreen */
+    let elem = document.documentElement;
+
+  /* View in fullscreen */
+  function openFullscreen() {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+      elem.msRequestFullscreen();
+    }
+  }
+
+  console.log(chordSounds)
+
+    </script>
+
+  </body>
+</html>
