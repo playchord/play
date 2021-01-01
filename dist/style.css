@@ -16,7 +16,6 @@ body {
     height: 100vh;
     background: url(./images/piano.jpg) bottom center;
     background-size: cover;
-    transition: all 2s ease;
 }
 
 .body2 {
@@ -100,7 +99,7 @@ body {
   font-size: 7rem;
   font-weight: bold;
   padding: 1rem .5rem;
-  transition: all 0.8s ease;
+  transition: all 0.3s ease;
   width: 10rem;
   text-align: center;
   text-shadow: -1px -1px 0 rgb(117, 117, 117), 1px -1px 0 rgb(117, 117, 117), 
@@ -261,7 +260,7 @@ a {
       padding: 0.7rem 0.3rem;
       margin: 0.2;
     }
-    .button-font {
+    .button-letter {
       font-size: 3rem;
     }
     .sound {
